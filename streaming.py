@@ -124,6 +124,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         array = np.append(array, np.array(list(map(lambda x: x.calc_value, signal.values))))
     response = requests.put(host + "/rest/rec/measurements/stop")
     s.close()
+response = requests.put(host + "/rest/rec/finish")
+response = requests.put(host + "/rest/rec/close")
 print(str(array.size) + " samples collected")
 
 import utility
