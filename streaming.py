@@ -30,7 +30,7 @@ print(module_info)
 # Start TEDS detection, we then check when it is done and read it out as JSON
 
 # Detect TEDS
-response = requests.post(host + "/rest/rec/channels/input/channels/transducers/detect")
+response = requests.post(host + "/rest/rec/channels/input/all/transducers/detect")
 while requests.get(host + "/rest/rec/onchange").json()["transducerDetectionActive"]:
     pass
 # Get TEDS information
