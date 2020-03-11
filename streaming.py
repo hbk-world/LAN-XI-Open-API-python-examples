@@ -30,7 +30,7 @@ print(module_info)
 # Start TEDS detection, we then check when it is done and read it out as JSON
 
 # Detect TEDS
-response = requests.post(host + "/rest/rec/channels/input/channels/transducers/detect")
+response = requests.post(host + "/rest/rec/channels/input/all/transducers/detect")
 while requests.get(host + "/rest/rec/onchange").json()["transducerDetectionActive"]:
     pass
 # Get TEDS information
@@ -124,6 +124,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         array = np.append(array, np.array(list(map(lambda x: x.calc_value, signal.values))))
     response = requests.put(host + "/rest/rec/measurements/stop")
     s.close()
+response = requests.put(host + "/rest/rec/finish")
+response = requests.put(host + "/rest/rec/close")
 print(str(array.size) + " samples collected")
 
 import utility
