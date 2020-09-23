@@ -1,0 +1,5 @@
+# python
+*/src
+*.pyc
+.vscode/
+venv/
