@@ -14,7 +14,7 @@
 
 import requests
 
-ip = "10.100.36.78"
+ip = "169.254.213.171"
 host = "http://" + ip
 
 # Open recorder application
@@ -40,7 +40,7 @@ print(channels)
 
 # To start a stream we first need to set a configuration. In this example we create a configuration by requesting a default channel setup. We use a tiny utility function to update all values with a given key.
 
-import utility
+import HelpFunctions.utility as utility
 # Create a new recording
 response = requests.put(host + "/rest/rec/create")
 # Get Default setup for channels
@@ -128,7 +128,7 @@ response = requests.put(host + "/rest/rec/finish")
 response = requests.put(host + "/rest/rec/close")
 print(str(array.size) + " samples collected")
 
-import utility
+
 # Create a plot of the data
 import matplotlib.pyplot as plt
 win = np.hamming(len(array))

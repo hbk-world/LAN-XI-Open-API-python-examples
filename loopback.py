@@ -31,7 +31,7 @@ print(module_info)
 
 # To start a stream we first need to set a configuration. In this example we create a configuration by requesting a default channel setup. We use a tiny utility function to update all values with a given key.
 
-import utility
+import HelpFunctions.utility as utility
 # Create a new recording
 response = requests.put(host + "/rest/rec/create")
 # Get Default setup for channels
@@ -128,7 +128,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 print(str(array.size) + " samples collected")
 
 
-import utility
+
 # Create a plot of the data
 import matplotlib.pyplot as plt
 win = np.hamming(len(array))

@@ -1,9 +1,9 @@
-from time import gmtime
-from lanxi import LanXI, streamHandler, DataBuffer
-import utility
+from HelpFunctions.lanxi import LanXI
+from HelpFunctions.Stream import streamHandler
+from HelpFunctions.Buffer import DataBuffer
+import HelpFunctions.utility as utility
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import time
 import numpy as np
 import sys
 
@@ -34,7 +34,7 @@ class FigHandler:
         self.ax1.set_ylim(bottom=-1, top=1)
         self.ax1.grid()
         self.ax1.set_xlabel("Time [s]")
-        self.ax1.set_ylabel("Amplitude [Pa]")
+        self.ax1.set_ylabel("Amplitude")
 
         # Subplot 2 (FFT) 
         # Calculate the frequency vector 
