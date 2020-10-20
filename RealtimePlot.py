@@ -5,13 +5,12 @@ import HelpFunctions.utility as utility
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
-import sys
 
 # This example shows a multithreaded script to plot realtime time and fft data for a Lan-XI module. 
 # Please run this script in en  release mode. The performance in debugging mode can't be guaranteed! 
 
 # IP of Lan-XI
-Lanxi = LanXI("169.254.213.171")
+Lanxi = LanXI("169.254.11.68")
 Lanxi.setup_stream()
 
 class FigHandler:
@@ -31,7 +30,7 @@ class FigHandler:
         # Subplot1 Time data
         self.line1, = self.ax1.plot(axis, np.arange(self.ChunkToShow))
         self.ax1.set_xlim(left=np.min(axis), right=np.max(axis))
-        self.ax1.set_ylim(bottom=-1, top=1)
+        self.ax1.set_ylim(bottom=-2, top=2)
         self.ax1.grid()
         self.ax1.set_xlabel("Time [s]")
         self.ax1.set_ylabel("Amplitude")

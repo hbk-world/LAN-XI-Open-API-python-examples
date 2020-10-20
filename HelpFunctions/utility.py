@@ -44,7 +44,7 @@ def dbfft(x, fs, win=None, ref=32768):
 
     # Scale the magnitude of FFT by window and factor of 2,
     # because we are using half of FFT spectrum.
-    s_mag = np.abs(sp) * 2 / np.sum(win)
+    s_mag = (np.abs(sp) * np.sqrt(2)) / np.sum(win)
 
     # Convert to dBFS
     s_dbfs = 20 * np.log10(s_mag/ref)
