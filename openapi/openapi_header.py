@@ -33,8 +33,8 @@ class OpenapiHeader(KaitaiStruct):
         self.message_type = KaitaiStream.resolve_enum(self._root.EMessageType, self._io.read_u2le())
         self.reserved1 = self._io.read_u2le()
         self.reserved2 = self._io.read_u4le()
-        self.time = self._io.read_u8le()
-        self.time2 = self._io.read_u4le()
+        self.time = self._io.read_u4le()
+        self.time2 = self._io.read_u8le()
         self.content_length = self._io.read_u4le()
 
 
